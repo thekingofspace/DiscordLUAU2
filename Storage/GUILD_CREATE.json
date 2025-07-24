@@ -1,0 +1,191 @@
+{
+  "activity_instances": {},
+  "afk_timeout": 300,
+  "application_command_counts": {},
+  "channels": [
+    {
+      "flags": 0,
+      "id": "1388062053360472256",
+      "name": "Text Channels",
+      "permission_overwrites": {},
+      "position": 0,
+      "type": 4,
+      "version": 1751010182469.0
+    },
+    {
+      "flags": 0,
+      "id": "1388062053360472257",
+      "name": "Voice Channels",
+      "permission_overwrites": {},
+      "position": 0,
+      "type": 4,
+      "version": 1751010182476.0
+    },
+    {
+      "flags": 0,
+      "icon_emoji": {
+        "name": "👋"
+      },
+      "id": "1388062053360472258",
+      "last_message_id": "1388067043491844217",
+      "name": "general",
+      "parent_id": "1388062053360472256",
+      "permission_overwrites": {},
+      "position": 0,
+      "rate_limit_per_user": 0,
+      "type": 0,
+      "version": 1751010182485.0
+    },
+    {
+      "bitrate": 64000,
+      "flags": 0,
+      "icon_emoji": {
+        "name": "🎙"
+      },
+      "id": "1388062053360472259",
+      "name": "General",
+      "parent_id": "1388062053360472257",
+      "permission_overwrites": {},
+      "position": 0,
+      "rate_limit_per_user": 0,
+      "type": 2,
+      "user_limit": 0,
+      "version": 1751010182498.0
+    }
+  ],
+  "default_message_notifications": 0,
+  "embedded_activities": {},
+  "emojis": {},
+  "explicit_content_filter": 0,
+  "features": {},
+  "guild_scheduled_events": {},
+  "id": "1388062052811276388",
+  "joined_at": "2025-06-27T07:43:20.327000+00:00",
+  "large": false,
+  "lazy": true,
+  "max_members": 2500000,
+  "max_stage_video_channel_users": 50,
+  "max_video_channel_users": 25,
+  "member_count": 2,
+  "members": [
+    {
+      "deaf": false,
+      "flags": 0,
+      "joined_at": "2025-06-27T07:43:02.358000+00:00",
+      "mute": false,
+      "pending": false,
+      "roles": {},
+      "user": {
+        "avatar": "8b6be65f0c01bd180b3cfcb0db38ca2b",
+        "bot": false,
+        "discriminator": "0",
+        "display_name": "Minos Cube Cultist #2",
+        "global_name": "Minos Cube Cultist #2",
+        "id": "850507806578966538",
+        "primary_guild": {
+          "badge": "7f968d34689b032120d7a0f2a3d69b83",
+          "identity_enabled": true,
+          "identity_guild_id": "214523379766525963",
+          "tag": "RIM"
+        },
+        "public_flags": 64,
+        "username": "_yeet9000"
+      }
+    },
+    {
+      "deaf": false,
+      "flags": 0,
+      "joined_at": "2025-06-27T07:43:20.327000+00:00",
+      "mute": false,
+      "pending": false,
+      "roles": [
+        "1388062128090644481"
+      ],
+      "user": {
+        "avatar": "7ba2ebda541ab33f07e309fb97b8c06a",
+        "bot": true,
+        "discriminator": "6288",
+        "id": "1384450011563298897",
+        "public_flags": 0,
+        "username": "BaroBot"
+      }
+    }
+  ],
+  "mfa_level": 0,
+  "name": "Minos Cube Cultist #2's server",
+  "nsfw": false,
+  "nsfw_level": 0,
+  "owner_configured_content_level": 0,
+  "owner_id": "850507806578966538",
+  "preferred_locale": "en-US",
+  "premium_progress_bar_enabled": false,
+  "premium_subscription_count": 0,
+  "premium_tier": 0,
+  "presences": [
+    {
+      "activities": [
+        {
+          "created_at": 1753334535735.0,
+          "id": "ec0b28a579ecb4bd",
+          "name": "Sup",
+          "type": 0
+        }
+      ],
+      "client_status": {
+        "web": "online"
+      },
+      "processed_at_timestamp": 0,
+      "status": "online",
+      "user": {
+        "id": "1384450011563298897"
+      }
+    }
+  ],
+  "region": "deprecated",
+  "roles": [
+    {
+      "color": 0,
+      "colors": {
+        "primary_color": 0
+      },
+      "flags": 0,
+      "hoist": false,
+      "id": "1388062052811276388",
+      "managed": false,
+      "mentionable": false,
+      "name": "@everyone",
+      "permissions": "2248473465835073",
+      "position": 0,
+      "tags": {},
+      "version": 1751010182465.0
+    },
+    {
+      "color": 0,
+      "colors": {
+        "primary_color": 0
+      },
+      "flags": 0,
+      "hoist": false,
+      "id": "1388062128090644481",
+      "managed": true,
+      "mentionable": false,
+      "name": "BaroBot",
+      "permissions": "563224831646784",
+      "position": 1,
+      "tags": {
+        "bot_id": "1384450011563298897"
+      },
+      "version": 1751010200293.0
+    }
+  ],
+  "soundboard_sounds": {},
+  "stage_instances": {},
+  "stickers": {},
+  "system_channel_flags": 0,
+  "system_channel_id": "1388062053360472258",
+  "threads": {},
+  "unavailable": false,
+  "verification_level": 0,
+  "version": 1751010182501.0,
+  "voice_states": {}
+}

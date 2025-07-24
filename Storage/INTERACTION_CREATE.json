@@ -1,0 +1,70 @@
+{
+  "app_permissions": "562949953863680",
+  "application_id": "1384450011563298897",
+  "attachment_size_limit": 524288000,
+  "authorizing_integration_owners": {
+    "0": "0"
+  },
+  "channel": {
+    "flags": 0,
+    "id": "1397691165419245690",
+    "last_message_id": "1397763436385140757",
+    "recipient_flags": 0,
+    "recipients": [
+      {
+        "avatar": "7ba2ebda541ab33f07e309fb97b8c06a",
+        "bot": true,
+        "discriminator": "6288",
+        "id": "1384450011563298897",
+        "public_flags": 0,
+        "username": "BaroBot"
+      }
+    ],
+    "type": 1
+  },
+  "channel_id": "1397691165419245690",
+  "context": 1,
+  "data": {
+    "id": "1385299655948238918",
+    "name": "test",
+    "type": 1
+  },
+  "entitlements": {},
+  "id": "1397803124785287189",
+  "locale": "en-US",
+  "token": "aW50ZXJhY3Rpb246MTM5NzgwMzEyNDc4NTI4NzE4OTphakZSWHFHRnhHRnRObkZ5eDRNaUszdzViOW4yOFBNS2cwcjNYR29ITnROcEEzdkJwUmFHSHh1aXZkUWZra0Z1RDBvakUwcE9JRFhSUktjMVc1Y3BDTlpDV1RTbzBwQnhFdUZZbndSek1ZbmRSbU9VaGdaa1ZYcmpON0dvdkZCaA",
+  "type": 2,
+  "user": {
+    "avatar": "a_07654ddb51a21aa20861f0b2f74805a4",
+    "avatar_decoration_data": {
+      "asset": "a_5087f7f988bd1b2819cac3e33d0150f5",
+      "sku_id": "1157409074422481023"
+    },
+    "clan": {
+      "badge": "fa9cc80236e71715c90d24db7ee9eb53",
+      "identity_enabled": true,
+      "identity_guild_id": "454384800665567232",
+      "tag": "LOTA"
+    },
+    "collectibles": {
+      "nameplate": {
+        "asset": "nameplates/nameplates_v2/glitch/",
+        "label": "COLLECTIBLES_NAMEPLATES_V2_GLITCH_A11Y",
+        "palette": "violet",
+        "sku_id": "1377377712078848180"
+      }
+    },
+    "discriminator": "0",
+    "global_name": "Raikin",
+    "id": "369266156709871619",
+    "primary_guild": {
+      "badge": "fa9cc80236e71715c90d24db7ee9eb53",
+      "identity_enabled": true,
+      "identity_guild_id": "454384800665567232",
+      "tag": "LOTA"
+    },
+    "public_flags": 4194368,
+    "username": "raikin7"
+  },
+  "version": 1
+}
