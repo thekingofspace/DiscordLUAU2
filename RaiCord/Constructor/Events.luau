@@ -1,9 +1,5 @@
 local Signal = require("../VendorModules/Signal")
 
-local ClassBuilder = require("../Util/ClassConstructor")
-
-local Request = require("../Requets")
-
 local SignalerTable = {
     OnReady = Signal:CreateSignal();
 

@@ -29,5 +29,7 @@ return {
 
     EmbedBuilder = require("@self/Constructor/EmbedBuilder");
 
-    MessageBuilder = require("@self/Constructor/MessageBuilder")
+    MessageBuilder = require("@self/Constructor/MessageBuilder");
+
+    ClassConstructor = require("@self/Util/ClassConstructor")
 }
