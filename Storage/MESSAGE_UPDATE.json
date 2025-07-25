@@ -1,0 +1,73 @@
+{
+  "attachments": {},
+  "author": {
+    "avatar": "7ba2ebda541ab33f07e309fb97b8c06a",
+    "bot": true,
+    "discriminator": "6288",
+    "id": "1384450011563298897",
+    "public_flags": 0,
+    "username": "BaroBot"
+  },
+  "channel_id": "1397691165419245690",
+  "channel_type": 1,
+  "components": {},
+  "content": "HI",
+  "embeds": [
+    {
+      "color": 7506394,
+      "content_scan_version": 2,
+      "description": "Test",
+      "id": "1398116124645916794",
+      "title": "Test",
+      "type": "rich"
+    }
+  ],
+  "flags": 0,
+  "id": "1398116124645916793",
+  "mention_everyone": false,
+  "mention_roles": {},
+  "mentions": [
+    {
+      "avatar": "a_07654ddb51a21aa20861f0b2f74805a4",
+      "avatar_decoration_data": {
+        "asset": "a_5087f7f988bd1b2819cac3e33d0150f5",
+        "sku_id": "1157409074422481023"
+      },
+      "clan": {
+        "badge": "fa9cc80236e71715c90d24db7ee9eb53",
+        "identity_enabled": true,
+        "identity_guild_id": "454384800665567232",
+        "tag": "LOTA"
+      },
+      "collectibles": {
+        "nameplate": {
+          "asset": "nameplates/nameplates_v2/glitch/",
+          "label": "COLLECTIBLES_NAMEPLATES_V2_GLITCH_A11Y",
+          "palette": "violet",
+          "sku_id": "1377377712078848180"
+        }
+      },
+      "discriminator": "0",
+      "global_name": "Raikin",
+      "id": "369266156709871619",
+      "primary_guild": {
+        "badge": "fa9cc80236e71715c90d24db7ee9eb53",
+        "identity_enabled": true,
+        "identity_guild_id": "454384800665567232",
+        "tag": "LOTA"
+      },
+      "public_flags": 4194368,
+      "username": "raikin7"
+    }
+  ],
+  "message_reference": {
+    "channel_id": "1397691165419245690",
+    "message_id": "1398116122825457798",
+    "type": 0
+  },
+  "pinned": false,
+  "position": 0,
+  "timestamp": "2025-07-25T01:34:19.857000+00:00",
+  "tts": false,
+  "type": 19
+}

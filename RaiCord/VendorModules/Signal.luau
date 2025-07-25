@@ -9,13 +9,15 @@ export type Connection = {
 
 export type Signal = {
     Connect: (self: Signal, Callback: (...any) -> ()) -> Connection,
+    ConnectAsync: (self: Signal, Callback: (...any) -> ()) -> Connection,
     Wait: (self: Signal, timeout: number?) -> ...any,
     Fire: (self: Signal, ...any) -> (),
 }
 
 function module:CreateSignal()
     local self = {}
-    local Connections = {}
+    local SyncConnections = {}
+    local AsyncConnections = {}
     local WaitingThreads = {}
     self.Constructor = nil
     self.WasConnected = false
@@ -23,21 +25,38 @@ function module:CreateSignal()
     function self:Connect(Callback: (...any) -> ())
         assert(typeof(Callback) == "function", "Callback must be a function")
 
-        local Connection = {}
-        Connection.Callback = Callback
-        Connection.IsConnected = true
-        self.WasConnected = true
+        local Connection = {
+            Callback = Callback,
+            IsConnected = true,
+        }
 
         function Connection:Disconnect()
-            Connection.IsConnected = false
+            self.IsConnected = false
         end
 
-        table.insert(Connections, Connection)
-
+        table.insert(SyncConnections, Connection)
+        self.WasConnected = true
         return Connection
     end
 
-    function self:AddConstructor(Callback:(...any) -> ...any)
+    function self:ConnectAsync(Callback: (...any) -> ())
+        assert(typeof(Callback) == "function", "Callback must be a function")
+
+        local Connection = {
+            Callback = Callback,
+            IsConnected = true,
+        }
+
+        function Connection:Disconnect()
+            self.IsConnected = false
+        end
+
+        table.insert(AsyncConnections, Connection)
+        self.WasConnected = true
+        return Connection
+    end
+
+    function self:AddConstructor(Callback: (...any) -> ...any)
         self.Constructor = Callback
     end
 
@@ -86,28 +105,34 @@ function module:CreateSignal()
     function self:Fire(...)
         local args = table.pack(...)
 
-        if self.Constructor ~= nil then
-            args = table.pack(self.Constructor(table.unpack(args)))
+        if self.Constructor then
+            args = table.pack(self.Constructor(table.unpack(args, 1, args.n)))
+        end
+
+        for _, connection in ipairs(AsyncConnections) do
+            if connection.IsConnected then
+                task.spawn(connection.Callback, table.unpack(args, 1, args.n))
+            end
         end
 
         if #WaitingThreads > 0 then
+            local toResume = table.clone(WaitingThreads)
+            table.clear(WaitingThreads)
             task.spawn(function()
-                local toResume = table.clone(WaitingThreads)
-                table.clear(WaitingThreads)
                 for _, resumeFn in ipairs(toResume) do
                     resumeFn(table.unpack(args, 1, args.n))
                 end
             end)
+        end
 
-            if #Connections == 0 then
-                self.WasConnected = false
+        for _, connection in ipairs(SyncConnections) do
+            if connection.IsConnected then
+                connection.Callback(table.unpack(args, 1, args.n))
             end
         end
 
-        for _, connection in ipairs(Connections) do
-            if connection.IsConnected then
-                connection.Callback(table.unpack(args))
-            end
+        if #AsyncConnections == 0 and #SyncConnections == 0 then
+            self.WasConnected = false
         end
     end
 
@@ -121,6 +146,10 @@ function module:CreateReadOnlySignal(realSignal)
 
     function public:Connect(...)
         return realSignal:Connect(...)
+    end
+
+    function public:ConnectAsync(...)
+        return realSignal:ConnectAsync(...)
     end
 
     function public:Wait(timeout)

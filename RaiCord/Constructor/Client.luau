@@ -16,22 +16,11 @@ local ClientControls = require("../ClientControls")
 
 local ClassBuilder = require("../Util/ClassConstructor")
 
+local EventBuilder = require("./ClientEventBuilder")
+
 local ClientHandler = {}
 
 ClientHandler.Requests = RequestHandler
-
-
----- API CONSTRUCTORS
-
-Events.PresenceUpdated:AddConstructor(function(Data)
-    return ClassBuilder.CreateUser(RequestHandler.GetUserInfo(Data.user.id)), Data
-end)
-
-Events.OnMessage:AddConstructor(function(Data)
-    return ClassBuilder.CreateMessage(Data), ClassBuilder.CreateUser(Data.author), Data.channel_id, Data
-end)
-
------
 
 function ClientHandler.New(ClientSettings)
     local self = setmetatable({}, {});
@@ -72,6 +61,8 @@ function ClientHandler.New(ClientSettings)
             error("Client is already running.")
         end
 
+        EventBuilder(self, self.Events)
+
         if self.Debug == true then
             print("DEBUG MODE IS ACTIVE YOU WILL GET ALOT MORE MESSAGES THEN NORMAL.")
         end
@@ -88,11 +79,6 @@ function ClientHandler.New(ClientSettings)
         local Pack = Connection:next()
         Pack = Serde.decode("json", Pack)
         local Heartbeat:number = Pack.d.heartbeat_interval / 1000
-
-        task.spawn(function()
-            local Data = Events.OnReady:Wait()
-            self.User = RequestHandler.GetUserInfo(Data.user.id)
-        end)
 
         self.Heartbeat = task.spawn(function()
                 while true do

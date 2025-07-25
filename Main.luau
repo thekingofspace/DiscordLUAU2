@@ -30,8 +30,12 @@ Client.Events.OnReady:Connect(function(Data)
     Client.ClientControls:SetStatus("Sup", Enumerator.Status.online, Enumerator.ActivityType.Playing)
 end)
 
+Client.Events.Heartbeat:ConnectAsync(function()
+    print("ran")
+end)
+
 Client.Events.Heartbeat:Connect(function()
-    
+    print("ran 2")
 end)
 
 Client.Events.OnStop:Connect(function()
