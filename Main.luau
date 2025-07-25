@@ -69,3 +69,5 @@ Client.Events.Undefined:Connect(function(Event:string, Data)
 end)
 
 Client:Start()
+
+task.wait(5)

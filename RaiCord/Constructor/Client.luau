@@ -14,8 +14,6 @@ local Types = require("../Types")
 
 local ClientControls = require("../ClientControls")
 
-local ClassBuilder = require("../Util/ClassConstructor")
-
 local EventBuilder = require("./ClientEventBuilder")
 
 local ClientHandler = {}
